@@ -1,0 +1,21 @@
+﻿<Window x:Class="Classes1103.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Classes1103"
+        xmlns:viewModel="clr-namespace:Classes1103.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+        
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <StackPanel>
+            <TextBox Text="{Binding FieldData, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Command="{Binding ButtonCommand}" Content="Perform Action"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
